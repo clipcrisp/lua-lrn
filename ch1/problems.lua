@@ -61,6 +61,8 @@ end
 
 -- Boilerplate for all exercises in one file. Some of the questions may not
 -- have solves but I'll probably print my thinking.
+-- Had to put this after since I believe there's not a way to declare functions
+-- before their definition.
 if arg[1] == nil then
     print("Please enter a exercise number to run the solve.")
     print("Exercises: 1.1, 1.2, ... 1.8")

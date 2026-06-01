@@ -59,6 +59,28 @@ that is the name of the type. Double checked with interpreter.]]
     print("type(nil) == nil equals " .. tostring(type(nil) == nil))
 end
 
+function Ex1_6()
+    local text = [[
+
+Assuming should be simple as checking whether the value is true or false?
+]]
+    print(text)
+    local types_table = {
+        Nil = nil,
+        Boolean = false,
+        Number = 4.5,
+        String = "String~",
+        UserData = io.stdin,
+        Func = Ex1_1,
+        Table = {},
+    }
+    for key, value in pairs(types_table) do
+        print("Type of " .. tostring(key) .. " with value " .. tostring(value)
+            .. " is a boolean? " ..
+            tostring(value == true or value == false))
+    end
+end
+
 -- Boilerplate for all exercises in one file. Some of the questions may not
 -- have solves but I'll probably print my thinking.
 -- Had to put this after since I believe there's not a way to declare functions
@@ -77,4 +99,6 @@ elseif arg[1] == "1.4" then
     Ex1_4()
 elseif arg[1] == "1.5" then
     Ex1_5()
+elseif arg[1] == "1.6" then
+    Ex1_6()
 end

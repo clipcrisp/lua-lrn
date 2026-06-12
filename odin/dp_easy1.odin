@@ -5,6 +5,7 @@ create a program that will ask the users name, age, and reddit username. have it
 your name is (blank), you are (blank) years old, and your username is (blank)
 for extra credit, have the program log this information in a file to be accessed later.
 */
+// ? For some reason this doesn't work on windows, outputs ".years old and your username is clipcrisp"
 package dpe1
 
 import "core:fmt"
@@ -17,8 +18,7 @@ main :: proc() {
 	fmt.println("Please enter your age:")
 	age : string = readinput() 
 	fmt.println("Please enter your username:")
-	username : string = readinput() 
-	fmt.println(age)
+	username : string = readinput()
 
 	fmt.printfln("Your name is %s, you are %s years old and your username is %s.", name, age, username)
 }

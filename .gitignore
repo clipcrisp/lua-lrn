@@ -40,8 +40,8 @@ luac.out
 *.hex
 
 # Sublime Files
-sublime_odin.sublime-project
-sublime_odin.sublime-workspace
+*.sublime-project
+*.sublime-workspace
 
 # Mac
 .DS_Store

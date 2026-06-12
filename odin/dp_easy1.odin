@@ -14,16 +14,16 @@ import "core:strings"
 
 main :: proc() {
 	fmt.println("Please enter your name:")
-	name : string = readinput() 
+	name : string = read_input() 
 	fmt.println("Please enter your age:")
-	age : string = readinput() 
+	age : string = read_input() 
 	fmt.println("Please enter your username:")
-	username : string = readinput()
+	username : string = read_input()
 
 	fmt.printfln("Your name is %s, you are %s years old and your username is %s.", name, age, username)
 }
 
-readinput :: proc() -> string {
+read_input :: proc() -> string {
 	buf: [256]byte
 	name, err := os.read(os.stdin, buf[:])
 	if err != nil {

@@ -19,13 +19,13 @@ main :: proc() {
 	fmt.println(`"M" to generate two items and merge them.`)
 	fmt.println(`"q" to exit application.`)
 	for {	
-		input : string = readinput()
+		input : string = read_input()
 		if input == "G" {
 			fmt.println("Generating Item!")
-			// TODO generateitem()
+			item := generate_item()
 		} else if input == "M" {
 			fmt.println("Generation Items and Merging!")
-			// TODO mergeitems()
+			item := merge_item()
 		} else if input == "q" {
 			os.exit(0)
 		} else {
@@ -34,7 +34,7 @@ main :: proc() {
 	}
 }
 
-readinput :: proc() -> string {
+read_input :: proc() -> string {
 	buf: [256]byte
 	name, err := os.read(os.stdin, buf[:])
 	if err != nil {

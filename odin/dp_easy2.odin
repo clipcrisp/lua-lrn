@@ -8,6 +8,7 @@ EXTRA CREDIT: make the calculator have multiple functions! Not only should it be
 */
 
 // Not sure if it's useful or a calc but I'm goint to make a item generator that can also merge items
+// Been playing PoE2 so items on the brain.
 package dpe2 
 
 import "core:fmt"
@@ -44,4 +45,50 @@ read_input :: proc() -> string {
 
 	str := string(buf[:name - 1])
 	return strings.clone(str)
+}
+
+generate_any_item :: proc() -> Item {
+	// TODO <
+}
+
+generate_specific_item :: proc(item_type: Item_Type) -> Item {
+	// TODO <
+}
+
+// Procedure overloading seems cool
+generate_item :: proc {generate_any_item, generate_specific_item}
+
+merge_item :: proc() -> Item {
+	item1 = generate_item()
+	item2 = generate_item()
+	// TODO <
+}
+
+// Will expend w/ more props as I go
+Item :: struct {
+	item_type: Item_Type,
+	item_stats: Item_Stats,
+	value: int	
+}
+
+Item_Type :: enum {
+	POTION,
+	SWORD,
+}
+
+Item_Stats :: union {
+	Potion_Stats,
+	Sword_Stats,
+}
+
+Potion_Stats :: struct {
+	attr_to_change: string,
+	amount_of_change: int,
+	is_over_time: bool,
+	duration: int,
+}
+
+Sword_Stats :: struct {
+	damage: int,
+	attack_speed: f32,
 }
